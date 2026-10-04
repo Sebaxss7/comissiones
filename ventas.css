@@ -267,4 +267,15 @@ p span {
         font-size: 13px;
     }
 }
-```
+
+.mensaje-error {
+    display: block;
+    color: red;
+    font-style: italic;
+    font-size: 14px;
+    margin-top: -12px;
+    margin-bottom: 15px;
+    min-height: 18px;
+}
+
+

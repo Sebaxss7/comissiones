@@ -24,3 +24,48 @@ function calcular() {
     mostrarEnSpan("spTotal", total);
 
 }
+
+function validarSueldoBase() {
+    validarInput("txtSueldoBase", "errorSueldoBase");
+}
+
+function validarVentas() {
+    validarInput("txtVentas", "errorVentas");
+}
+
+function validarPrecio() {
+    validarInput("txtPrecio", "errorPrecio");
+}
+
+
+function validarInput(idInput, idError) {
+
+    let input = document.getElementById(idInput);
+    let mensaje = document.getElementById(idError);
+
+    let valor = input.value.trim();
+
+    // Limpiar mensaje anterior
+    mensaje.textContent = "";
+
+    // No puede estar vacío
+    if (valor === "") {
+        mensaje.textContent = "Este campo no puede estar vacío.";
+        return false;
+    }
+
+    // Solo números
+    if (!/^[0-9]+$/.test(valor)) {
+        mensaje.textContent = "Solo se permiten números.";
+        return false;
+    }
+
+    // Máximo 5 dígitos
+    if (valor.length > 5) {
+        mensaje.textContent = "Máximo 5 dígitos.";
+        return false;
+    }
+
+    return true;
+}
+
